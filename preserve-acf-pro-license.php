@@ -4,7 +4,7 @@
  * Plugin Name: Preserve ACF Pro License
  * Plugin URI: http://clarknikdelpowell.com
  * Description: A WP must-use plugin to preserve your ACF Pro license info after migrating data via WP Migrate DB or some other process.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Glenn Welser
  * Author URI: hhttp://clarknikdelpowell.com/agency/people/glenn
  * License: GPL2
