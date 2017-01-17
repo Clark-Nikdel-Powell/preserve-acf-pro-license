@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Preserve ACF Pro License
  * Plugin URI: http://clarknikdelpowell.com
- * Description: A WP must-use plugin to preserve your ACF Pro license info after migrating data via WP Migrate DB.
+ * Description: A WP must-use plugin to preserve your ACF Pro license info after migrating data via WP Migrate DB or some other process.
  * Version: 1.0.0
  * Author: Glenn Welser
  * Author URI: hhttp://clarknikdelpowell.com/agency/people/glenn
@@ -36,7 +36,12 @@ class Preserve_Acf_Pro_License {
 	 */
 	public function run() {
 
+		/**
+		 * Use the first action if you use WP Migrate DB Pro.
+		 * Use the second action if you have some other process.
+		 */
 		add_action( 'wpmdb_migration_complete', array( $this, 'preserve_license' ) );
+		//add_action( 'plugins_loaded', array( $this, 'preserve_license' ) );
 
 	}
 
@@ -49,7 +54,7 @@ class Preserve_Acf_Pro_License {
 	 */
 	public function preserve_license() {
 
-		return acf_pro_update_license( ACF_PRO_LICENSE_KEY );
+		return acf_pro_update_license( ACF_PRO_LICENSE );
 
 	}
 
