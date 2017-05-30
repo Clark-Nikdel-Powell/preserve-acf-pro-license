@@ -41,7 +41,7 @@ class Preserve_Acf_Pro_License {
 		 * Use the second action if you have some other process.
 		 */
 		add_action( 'wpmdb_migration_complete', array( $this, 'preserve_license' ) );
-		//add_action( 'plugins_loaded', array( $this, 'preserve_license' ) );
+		add_action( 'plugins_loaded', array( $this, 'preserve_license' ) );
 
 	}
 
