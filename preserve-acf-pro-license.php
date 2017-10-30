@@ -54,8 +54,15 @@ class Preserve_Acf_Pro_License {
 	 */
 	public function preserve_license() {
 
-		return acf_pro_update_license( ACF_PRO_LICENSE );
+		if ( wp_doing_ajax() ) {
+			return false;
+		}
 
+		if ( function_exists( 'acf_pro_update_license' ) ) {
+			return acf_pro_update_license( ACF_PRO_LICENSE );
+		} else {
+			return false;
+		}
 	}
 
 }
